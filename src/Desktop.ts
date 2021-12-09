@@ -2,6 +2,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import World from './World';
+import Block from './Block';
 
 class Desktop {
   world:World;
@@ -17,12 +18,8 @@ class Desktop {
     controls.minDistance = 0;
     controls.maxDistance = 500;
 
-    let geometry = new THREE.SphereGeometry(5,30,30);
-    let material = new THREE.MeshPhongMaterial({color:0xFFFFFF, side: THREE.DoubleSide})
-    const sphere = new THREE.Mesh( geometry, material );
-    sphere.receiveShadow = true;
-    sphere.castShadow = true;
-    this.world.scene.add( sphere );
+    let block = new Block(5,1,5, { color: 0x007F99 });
+    this.world.scene.add(block.mesh);
 
   }
 }
