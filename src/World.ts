@@ -28,7 +28,7 @@ class World {
     //add lighting
     const skyColor = 0xFFFFFF;  // light blue
     const groundColor = 0xFFFFFF;  // brownish orange
-    const intensity = 0.2;
+    const intensity = 1;
     const light = new THREE.HemisphereLight(skyColor, groundColor, intensity);
     light.position.set(0,200,0);
     this.scene.add(light);
