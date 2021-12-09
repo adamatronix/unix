@@ -42,6 +42,13 @@ class World {
 
     // remember to add the light to the scene
     this.scene.add( pLight );
+
+
+    const planeGeometry = new THREE.PlaneGeometry( 2000, 2000 );
+    const planeMaterial = new THREE.MeshBasicMaterial( {color: 0x000000 } );
+    const plane = new THREE.Mesh( planeGeometry, planeMaterial );
+    plane.rotation.x = THREE.MathUtils.degToRad(-90);
+    this.scene.add( plane );   
   }
 
   renderFrame = () => {
