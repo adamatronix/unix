@@ -18,7 +18,7 @@ class Desktop {
     controls.minDistance = 0;
     controls.maxDistance = 500;
 
-    let block = new Block(5,1,5, { color: 0x007F99 });
+    let block = new Block(5,1,5, { color: 0x4980b4 });
     this.world.scene.add(block.mesh);
 
   }

@@ -19,6 +19,7 @@ class Block {
     let material = new THREE.MeshPhongMaterial( { color: this.options.color } );
     
     this.mesh = new THREE.Mesh( geometry, material );
+    this.mesh.position.y = height/2;
     this.mesh.receiveShadow = true;
     this.mesh.castShadow = true;
   }
