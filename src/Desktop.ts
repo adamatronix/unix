@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import World from './World';
 import File from './File';
+import FileGroup from './FileGroup';
 
 class Desktop {
   world:World;
@@ -18,9 +19,13 @@ class Desktop {
     controls.minDistance = 0;
     controls.maxDistance = 500;
 
-    let file = new File('Portfolio');
-    this.world.scene.add(file.group);
+    let fileGroup = new FileGroup();
+    fileGroup.add([new File('Portfolio'),new File('Pornography'),new File('Documents'),new File('Portfolio'),new File('Pornography'),new File('Documents')]);
+    fileGroup.add([new File('Portfolio'),new File('Pornography'),new File('Documents'),new File('Portfolio'),new File('Pornography'),new File('Documents')]);
 
+    
+
+    this.world.scene.add(fileGroup.group);
   }
 }
 

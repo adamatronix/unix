@@ -19,7 +19,6 @@ class FileLabel {
     this.label = new GenerateLabel(label);
 
     let material = new THREE.MeshBasicMaterial({color:0xFFFFFF,transparent: true});
-    console.log(this.label.canvas);
     material.map = new THREE.CanvasTexture(this.label.canvas);
     let geometry = new THREE.PlaneGeometry(20,1.25);
     this.mesh = new THREE.Mesh(geometry,material);
