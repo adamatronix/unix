@@ -18,7 +18,7 @@ class Desktop {
     controls.minDistance = 0;
     controls.maxDistance = 500;
 
-    let file = new File();
+    let file = new File('Portfolio');
     this.world.scene.add(file.mesh);
 
   }
