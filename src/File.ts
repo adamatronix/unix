@@ -3,14 +3,19 @@ import Block from './Block';
 import FileLabel from './FileLabel';
 
 class File {
-  block:Block;
-  mesh: THREE.Mesh;
+  group:THREE.Group;
 
   constructor(name:string) {
-    this.block = new Block(5,1,5, {color:0x4980b4});
-    this.mesh = this.block.mesh;
+    this.group = new THREE.Group();
 
-    new FileLabel(name);
+    const block = new Block(5,1,5, {color:0x4980b4});
+    this.group.add(block.mesh);
+
+    console.log(block.mesh.position);
+    const label = new FileLabel(name);
+    label.mesh.position.set(block.mesh.position.x, block.mesh.position.y, block.mesh.position.z + 4);
+    this.group.add(label.mesh);
+    
   }
 }
 

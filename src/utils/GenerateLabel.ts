@@ -4,12 +4,12 @@ class GenerateLabel {
   canvas: HTMLCanvasElement;
 
   constructor(label:string) {
+    this.writeTextToCanvas(label);
     let screenFont = new FontFace('Screen', `url(${ScreenFont})`);
     screenFont.load().then((font) => {
       document.fonts.add(font);
-      this.writeTextToCanvas(label);
     });
-    
+
   }
 
   writeTextToCanvas = (text:string) => {

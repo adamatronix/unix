@@ -8,11 +8,12 @@ class FileLabel {
   constructor(label:string) {
     this.label = new GenerateLabel(label);
 
-    let material = new THREE.MeshBasicMaterial();
+    let material = new THREE.MeshBasicMaterial({color:0xFFFFFF,transparent: true});
+    console.log(this.label.canvas);
     material.map = new THREE.CanvasTexture(this.label.canvas);
-
-    let geometry = new THREE.PlaneGeometry(10,4);
+    let geometry = new THREE.PlaneGeometry(20,1.25);
     this.mesh = new THREE.Mesh(geometry,material);
+    this.mesh.rotation.x = THREE.MathUtils.degToRad(-90);
   }
 }
 
