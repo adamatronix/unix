@@ -1,6 +1,7 @@
 import ScreenFont from 'url:../assets/fonts/Scr18.ttf';
 
 class GenerateLabel {
+  canvas: HTMLCanvasElement;
 
   constructor(label:string) {
     let screenFont = new FontFace('Screen', `url(${ScreenFont})`);
@@ -13,6 +14,7 @@ class GenerateLabel {
 
   writeTextToCanvas = (text:string) => {
     let canvas = document.createElement('canvas');
+    this.canvas = canvas;
     canvas.width = 800;
     canvas.height = 50;
     let context = canvas.getContext('2d');
