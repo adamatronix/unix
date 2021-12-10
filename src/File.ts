@@ -12,8 +12,8 @@ class File {
     this.group.add(block.mesh);
 
     console.log(block.mesh.position);
-    const label = new FileLabel(name);
-    label.mesh.position.set(block.mesh.position.x, block.mesh.position.y, block.mesh.position.z + 4);
+    const label = new FileLabel(name, { color: 0xFFFFFF});
+    label.mesh.position.set(block.mesh.position.x, 0.5, block.mesh.position.z + 3.5);
     this.group.add(label.mesh);
     
   }
