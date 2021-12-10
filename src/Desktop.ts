@@ -2,7 +2,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import World from './World';
-import Block from './Block';
+import File from './File';
 
 class Desktop {
   world:World;
@@ -18,8 +18,8 @@ class Desktop {
     controls.minDistance = 0;
     controls.maxDistance = 500;
 
-    let block = new Block(5,1,5, { color: 0x4980b4 });
-    this.world.scene.add(block.mesh);
+    let file = new File();
+    this.world.scene.add(file.mesh);
 
   }
 }
